@@ -1,0 +1,40 @@
+import java.util.*;
+public class Main
+{
+  public static void main (String[]args)
+  {
+    Scanner sin = new Scanner (System.in);
+      System.out.println ("enter no of ele:");
+    int n = sin.nextInt ();
+      System.out.println("enter the elements:");
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+            arr[i]=sin.nextInt();
+        int c=0,s=0,mc=0;
+        int ms=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>=0){
+                c++;
+                s=s+arr[i];
+            }
+            else{
+                if(c>mc){
+                mc=c;
+                ms=s;
+                }
+            else if(c==mc)
+            {
+                ms=ms+s;
+            }
+            c=0;
+            s=0;
+            }
+        }
+        if(c==mc)
+        ms=ms+s;
+        System.out.println("max is"+(ms!=0?ms:-1));
+}
+}
+
+
